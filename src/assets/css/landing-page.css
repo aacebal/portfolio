@@ -29,13 +29,14 @@ h6 {
     font-size: 18px;
     font-weight: 400;
 }
-
 .intro-header {
     padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
     padding-bottom: 50px;
+    min-height: 500px;
     text-align: right;
     color: #f8f8f8;
-    background: url(../img/main-banner.jpeg) no-repeat center center;
+    background: url(../img/main-banner.jpeg) no-repeat center left;
+    background-attachment: fixed;
     background-size: cover;
 }
 
@@ -117,10 +118,11 @@ h6 {
 }
 
 .banner {
-    padding: 100px 0;
+    padding: 175px 0;
     color: #f8f8f8;
-    background: url(../img/banner-bg.jpg) no-repeat center center;
+    background: url(../img/big-banner.jpeg) no-repeat center center;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .banner h2 {
