@@ -12,9 +12,6 @@ export class AppComponent {
 
   constructor(){ }
 
-  reveal() {
-    this.nameReveal = !this.nameReveal;
-    console.log("mouseover called");
-  }
+
 
 }
