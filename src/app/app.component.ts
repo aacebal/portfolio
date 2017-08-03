@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  nameReveal: boolean = false;
+
+  constructor(){ }
+
+  reveal() {
+    this.nameReveal = !this.nameReveal;
+    console.log("mouseover called");
+  }
+
 }
