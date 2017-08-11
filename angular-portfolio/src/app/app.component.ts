@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Inject } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   trigger,
@@ -7,6 +7,7 @@ import {
   animate,
   transition
 } from '@angular/animations';
+import { DOCUMENT } from '@angular/platform-browser';
 
 
 @Component({
@@ -33,16 +34,18 @@ export class AppComponent {
 
   show:boolean = false;
 
-  constructor(){ }
+  constructor( @Inject(DOCUMENT) private document: Document ){ }
 
   showFunction() {
-    this.show = !this.show;
+    this.show = true;
   }
 
   @HostListener("window:scroll", [])
 onWindowScroll() {
  //we'll do some stuff here when the window is scrolled
  this.showFunction();
+ let number = this.document.body.scrollTop;
+ 
 }
 
 }
