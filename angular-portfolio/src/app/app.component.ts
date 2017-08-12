@@ -45,7 +45,8 @@ onWindowScroll() {
  //we'll do some stuff here when the window is scrolled
  this.showFunction();
  let number = this.document.body.scrollTop;
- 
+
+
 }
 
 }
