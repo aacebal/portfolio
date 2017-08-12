@@ -61,7 +61,7 @@ export class AppComponent {
    //we'll do some stuff here when the window is scrolled
    let number = this.document.body.scrollTop;
    console.log(number);
-   if( number = 0 ) {
+   if( number === 0 ) {
      this.showDescription = false;
      this.showGames = false;
      this.showExpress = false;
@@ -70,7 +70,7 @@ export class AppComponent {
    if( number >= 5 ) {
      this.showDescription = true;
    }
-   if( number >= 350 ) {
+   if( number >= 500 ) {
      this.showGames = true;
    }
    if( number >= 750 ) {
