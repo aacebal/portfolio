@@ -37,13 +37,13 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <div class="intro-message">
+                <div class="intro-message col-lg-6 col-lg-offset-6">
                   <h1>Adel Acebal</h1>
-                    <div class="note" [ngClass]="{'transition':show}" [hidden]="!show">
-                      <h3 *ngIf="show" [@enterAnimation]>Web Developer, Ironhack graduate with a background <br>
-                        in design and Computer Science. Passionate and driven individual <br>
-                        with a knack for technology and a love for the arts.<br>
-                        Proficient with HTML, CSS, Javascript, jQuery, Bootstrap,<br>
+                    <div class="note" [ngClass]="{'transition':showDescription}" [hidden]="!showDescription">
+                      <h3 *ngIf="showDescription" [@enterRightAnimation]>Web Developer, Ironhack graduate with a background
+                        in design and Computer Science. Passionate and driven individual
+                        with a knack for technology and a love for the arts.
+                        Proficient with HTML, CSS, Javascript, jQuery, Bootstrap,
                         Angular, Node.js, Express and MongoDB.
                       </h3>
                     </div>
@@ -77,14 +77,14 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-lg-5 col-sm-6">
+            <div class="col-lg-5 col-sm-6" >
                 <hr class="section-heading-spacer">
                 <div class="clearfix"></div>
                 <h2 class="section-heading">Games:</h2>
                 <p class="lead">Collection of games built on Javasccript, HTML and CSS. Fully playable web-based games including classic remakes <a target="_blank" href="https://aacebal.github.io/2048/">2048</a>, <a target="_blank" href="https://aacebal.github.io/Pong-Game/">Ping Pong</a>, and the original story <a target="_blank" href="https://aacebal.github.io/oldhouse/">Old House</a>.</p>
             </div>
             <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                <img class="img-responsive" src="./assets/img/games.png" alt="">
+                <img *ngIf="showGames" [@enterRightAnimation] class="img-responsive" src="./assets/img/games.png" alt="">
             </div>
         </div>
 
@@ -106,7 +106,7 @@
                 <p class="lead">Website developed for Pool Hall that includes fully customizable menus, events and Photo Gallery. Maps API used to show user directions to the location. Visit at <a target="_blank" href="https://kk-billiards.herokuapp.com/">K&K Billiards Miami</a></p>
             </div>
             <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                <img class="img-responsive" src="./assets/img/apple-macbookpro-5.png" alt="">
+                <img *ngIf="showExpress" [@enterLeftAnimation] class="img-responsive" src="./assets/img/apple-macbookpro-5.png" alt="">
             </div>
         </div>
 
@@ -128,7 +128,7 @@
                 <p class="lead">Social platform for craft beer aficionados, with a sophisticated friend request system, events creation, rating systems, Google Maps integration and many other features at <a target="_blank" href="http://www.friendlybeerfinder.co/">Friendly Beer Finder</a>.</p>
             </div>
             <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                <img class="img-responsive" src="./assets/img/beer-finder.png" alt="">
+                <img *ngIf="showAngular" [@enterRightAnimation] class="img-responsive" src="./assets/img/beer-finder.png" alt="">
             </div>
         </div>
 
