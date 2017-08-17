@@ -52,6 +52,7 @@ export class AppComponent {
   showGames:boolean = false;
   showExpress:boolean = false;
   showAngular:boolean = false;
+  showMiami:boolean = false;
 
   constructor( @Inject(DOCUMENT) private document: Document ){ }
 
@@ -62,7 +63,6 @@ export class AppComponent {
    let number = this.document.body.scrollTop;
    console.log(number);
    if( number === 0 ) {
-     this.showDescription = false;
      this.showGames = false;
      this.showExpress = false;
      this.showAngular = false;
@@ -78,6 +78,9 @@ export class AppComponent {
    }
    if( number >= 1200 ) {
      this.showAngular = true;
+   }
+   if( number >= 1600 ) {
+     this.showMiami = true;
    }
 
 }
