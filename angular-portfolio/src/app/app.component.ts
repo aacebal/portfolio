@@ -66,6 +66,7 @@ export class AppComponent {
      this.showGames = false;
      this.showExpress = false;
      this.showAngular = false;
+     this.showMiami = false;
    }
    if( number >= 5 ) {
      this.showDescription = true;
@@ -79,7 +80,7 @@ export class AppComponent {
    if( number >= 1200 ) {
      this.showAngular = true;
    }
-   if( number >= 1600 ) {
+   if( number >= 1750 ) {
      this.showMiami = true;
    }
 
