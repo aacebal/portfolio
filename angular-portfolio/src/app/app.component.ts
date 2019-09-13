@@ -1,4 +1,4 @@
-import { Component, HostListener, Inject } from '@angular/core';
+import { Component, HostListener, Inject, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   trigger,
@@ -18,72 +18,73 @@ import { DOCUMENT } from '@angular/platform-browser';
     trigger(
       'enterRightAnimation', [
         transition(':enter', [
-          style({transform: 'translateX(100%)', opacity: 0}),
-          animate('500ms', style({transform: 'translateX(0)', opacity: 1}))
+          style({ transform: 'translateX(100%)', opacity: 0 }),
+          animate('500ms', style({ transform: 'translateX(0)', opacity: 1 }))
         ]),
       ]),
     trigger(
       'exitRightAnimation', [
         transition(':enter', [
-          style({transform: 'translateX(0)', opacity: 1}),
-          animate('500ms', style({transform: 'translateX(100%)', opacity: 0}))
+          style({ transform: 'translateX(0)', opacity: 1 }),
+          animate('500ms', style({ transform: 'translateX(100%)', opacity: 0 }))
+        ]),
       ]),
-    ]),
     trigger(
       'enterLeftAnimation', [
         transition(':enter', [
-          style({transform: 'translateX(-100%)', opacity: 0}),
-          animate('500ms', style({transform: 'translateX(0)', opacity: 1}))
+          style({ transform: 'translateX(-100%)', opacity: 0 }),
+          animate('500ms', style({ transform: 'translateX(0)', opacity: 1 }))
+        ]),
       ]),
-    ]),
     trigger(
       'exitLeftAnimation', [
         transition(':enter', [
-          style({transform: 'translateX(0)', opacity: 1}),
-          animate('500ms', style({transform: 'translateX(-100%)', opacity: 0}))
+          style({ transform: 'translateX(0)', opacity: 1 }),
+          animate('500ms', style({ transform: 'translateX(-100%)', opacity: 0 }))
+        ]),
       ]),
-    ]),
   ],
 })
 export class AppComponent {
   title = 'app';
 
-  showDescription:boolean = false;
-  showGames:boolean = false;
-  showExpress:boolean = false;
-  showAngular:boolean = false;
-  showMiami:boolean = false;
+  showDescription: boolean = false;
+  showGames: boolean = false;
+  showExpress: boolean = false;
+  showAngular: boolean = false;
+  showMiami: boolean = false;
 
-  constructor( @Inject(DOCUMENT) private document: Document ){ }
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    private hostElement: ElementRef
+  ) { }
 
 
-@HostListener("window:scroll", [])
+  @HostListener("window:scroll", [])
   onWindowScroll() {
-   //we'll do some stuff here when the window is scrolled
-   let number = this.document.body.scrollTop;
-   console.log(number);
-   if( number === 0 ) {
-     this.showGames = false;
-     this.showExpress = false;
-     this.showAngular = false;
-     this.showMiami = false;
-   }
-   if( number >= 5 ) {
-     this.showDescription = true;
-   }
-   if( number >= 500 ) {
-     this.showGames = true;
-   }
-   if( number >= 750 ) {
-     this.showExpress = true;
-   }
-   if( number >= 1200 ) {
-     this.showAngular = true;
-   }
-   if( number >= 1750 ) {
-     this.showMiami = true;
-   }
+    //we'll do some stuff here when the window is scrolled
+    let number = window.pageYOffset;
+    if (number === 0) {
+      this.showGames = false;
+      this.showExpress = false;
+      this.showAngular = false;
+      this.showMiami = false;
+    }
+    if (number >= 5) {
+      this.showDescription = true;
+    }
+    if (number >= 500) {
+      this.showGames = true;
+    }
+    if (number >= 750) {
+      this.showExpress = true;
+    }
+    if (number >= 1200) {
+      this.showAngular = true;
+    }
+    if (number >= 1750) {
+      this.showMiami = true;
+    }
 
-}
-
+  }
 }
